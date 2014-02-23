@@ -9,9 +9,7 @@ var path = require('path');
 // More libs for gulp !
 // Load plugins
 var $ = require('gulp-load-plugins')();
-var ngmin = require('ngmin');
 var lr = require('tiny-lr');
-var ecstatic = require('ecstatic');
 
 gulp.task('connect', $.connect.server({
   root: ['bower_components', 'demo'],
@@ -20,17 +18,29 @@ gulp.task('connect', $.connect.server({
 }));
 
 gulp.task('html', function () {
-  gulp.src('demo/**/*.html')
+  return gulp.src('demo/**/*.html')
     .pipe($.connect.reload());
 });
 
-gulp.task('css', function () {
+gulp.task('css', ['prefix'], function () {
   gulp.src('demo/**/*.css')
     .pipe($.connect.reload());
 });
 
+gulp.task('less', function () {
+  return gulp.src('demo/**/*.less')
+    .pipe($.less())
+    .pipe(gulp.dest('demo'));
+});
+
+gulp.task('prefix', ['less'], function () {
+  return gulp.src('demo/**/*.css')
+    .pipe($.autoprefixer('last 1 version', '> 1%'))
+    .pipe(gulp.dest('demo'));
+});
+
 gulp.task('js', function () {
-  gulp.src('demo/**/*.js')
+  return gulp.src('demo/**/*.js')
     .pipe($.connect.reload());
 });
 
@@ -38,6 +48,6 @@ gulp.task('js', function () {
 gulp.task('default', ['connect'], function () {
   // Watch for changes in `demo` folder
   gulp.watch('demo/**/*.html', ['html']);
-  gulp.watch('demo/**/*.css', ['css']);
+  gulp.watch('demo/**/*.less', ['css']);
   gulp.watch('demo/**/*.js', ['js']);
 });
