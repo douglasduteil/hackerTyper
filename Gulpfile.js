@@ -14,13 +14,23 @@ var lr = require('tiny-lr');
 var ecstatic = require('ecstatic');
 
 gulp.task('connect', $.connect.server({
-  root: ['demo'],
+  root: ['bower_components', 'demo'],
   port: 9000,
   livereload: true
 }));
 
 gulp.task('html', function () {
-  gulp.src('./demo/*.html')
+  gulp.src('demo/**/*.html')
+    .pipe($.connect.reload());
+});
+
+gulp.task('css', function () {
+  gulp.src('demo/**/*.css')
+    .pipe($.connect.reload());
+});
+
+gulp.task('js', function () {
+  gulp.src('demo/**/*.js')
     .pipe($.connect.reload());
 });
 
@@ -28,4 +38,6 @@ gulp.task('html', function () {
 gulp.task('default', ['connect'], function () {
   // Watch for changes in `demo` folder
   gulp.watch('demo/**/*.html', ['html']);
+  gulp.watch('demo/**/*.css', ['css']);
+  gulp.watch('demo/**/*.js', ['js']);
 });

@@ -4,27 +4,31 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width">
 
-  <base href="../"/>
-
-  <title>{{$root.openedFileNAme]}} - Codemirror</title>
-
-
-  <script src="../bower_components/codemirror/lib/codemirror.css"></script>
+  <title>{{$root.openedFileNAme}} - Codemirror</title>
 
   <!-- CSS
   ================================================== -->
+  <link rel="stylesheet" href="normalize-css/normalize.css"/>
+  <link rel="stylesheet" href="codemirror/lib/codemirror.css"/>
+  <link rel="stylesheet" href="codemirror/theme/twilight.css"/>
+  <link rel="stylesheet" href="demo.css"/>
 
 </head>
 <body ng-controller="xCtrl as xCtrl">
 
-  <div ui-codemirror="xCtrl.codemirrorOpts"></div>
+  <div class="mainEditor CodeMirror"
+       ui-codemirror="xCtrl.codemirrorOpts"></div>
 
   <!-- JS
   ================================================== -->
-  <script src="../bower_components/angular/angular.min.js"></script>
-  <script src="../bower_components/codemirror/lib/codemirror.js"></script>
+  <script src="angular/angular.js"></script>
 
-  <script src="../bower_components/angular-ui-codemirror/ui-codemirror.min.js"></script>
+  <script src="codemirror/lib/codemirror.js"></script>
+  <script src="codemirror/mode/javascript/javascript.js"></script>
+
+  <script src="angular-ui-codemirror/ui-codemirror.min.js"></script>
+
+  <script src="xCtrl.js"></script>
 
 </body>
 </html>
