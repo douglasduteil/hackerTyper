@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="x">
+<head lang="en">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width">
+
+  <base href="../"/>
+
+  <title>{{$root.openedFileNAme]}} - Codemirror</title>
+
+
+  <script src="../bower_components/codemirror/lib/codemirror.css"></script>
+
+  <!-- CSS
+  ================================================== -->
+
+</head>
+<body ng-controller="xCtrl as xCtrl">
+
+  <div ui-codemirror="xCtrl.codemirrorOpts"></div>
+
+  <!-- JS
+  ================================================== -->
+  <script src="../bower_components/angular/angular.min.js"></script>
+  <script src="../bower_components/codemirror/lib/codemirror.js"></script>
+
+  <script src="../bower_components/angular-ui-codemirror/ui-codemirror.min.js"></script>
+
+</body>
+</html>

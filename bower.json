@@ -1,0 +1,16 @@
+{
+  "name": "hackerTyper",
+  "version": "0.0.0",
+  "homepage": "https://github.com/douglasduteil/hackerTyper",
+  "authors": [
+    "Douglas Duteil <douglasduteil@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular-ui-codemirror": "~0.1.0"
+  },
+  "devDependencies": {
+
+  }
+}

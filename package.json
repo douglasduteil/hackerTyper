@@ -1,0 +1,26 @@
+{
+  "name": "hackerTyper",
+  "version": "0.0.0",
+  "description": "![Programming in movies](Programming in movies.gif \"Programming in movies\") (source)[https://vine.co/v/hPXTA6l9AqQ]",
+  "main": "index.js",
+  "devDependencies": {
+    "gulp": "~3.5.0",
+    "gulp-load-plugins": "~0.3.0",
+    "gulp-connect": "~1.0.0",
+    "gulp-uglify": "~0.2.1",
+    "ngmin": "~0.4.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/douglasduteil/hackerTyper.git"
+  },
+  "author": "Douglas Duteil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/douglasduteil/hackerTyper/issues"
+  },
+  "homepage": "https://github.com/douglasduteil/hackerTyper"
+}
