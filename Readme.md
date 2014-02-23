@@ -5,7 +5,7 @@
 </p>
 
 Hacker Typer is a fun joke for every person ho wants to look like a cool hacker!
-This directive is inspired by (http://hackertyper.net)[http://hackertyper.net]
+This directive is inspired by [http://hackertyper.net](http://hackertyper.net)
 
 
 
